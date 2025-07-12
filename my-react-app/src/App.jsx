@@ -9,17 +9,18 @@ const App = () => {
   }
   return (
     <>
-    <button onClick={fun1}>click</button>
-    <div>App
-      {
+    {/* <button onClick={fun1}>click</button> */}
+    <div> 
+       {/* App */}
+      {/*
         arr.map((a, b, c) => {
           return (<>
           <h1>{a}</h1>
-          </>)
+         </>)
         })
-      }
+     */ }
     </div>
-    </>
+     </>
     
     
   )
