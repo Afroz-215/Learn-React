@@ -1,59 +1,43 @@
 // import React, { useState } from 'react'
 
 // const Day2 = () => {
-
-//     let [count, SetCount] = useState(0)
-//     // let [color, SetColor] = useState('pink')
-//     let [color,SetColor] =useState(true)
-
-//     function fun1() {
-//         SetCount(count + 1)
+//    let [count ,SetCount]=     useState(0)
+//    let [color ,SetColor]=     useState(true)
+//     function fun1(){
+//         SetCount(count+1)  
 //     }
-
-//     function fun2() {
+//     function  fun2(){
 //         SetColor(!color)
-//     }
-//     return (
-//         <div style={{ /*backgroundColor: color,*/
-//             backgroundColor:color?'pink':'greenyellow',
-//             height:'400px',
-//             padding:'20px'
-          
-         
-//           }}>
-//             <h3>{count}</h3>
-//             <button onClick={fun1}>incre</button>
-//             <br />
-//             <br />
-//             <button onClick={() => SetCount(count - 1)}>decre</button>
-//             <br />
-//             <br />
-//             <button onClick={() => SetCount(0)}>reset</button>
-//             <br />
-//             <br />
-//             {/* <button onClick={() => SetColor('blue')}>color</button> */}
-//             <button onClick={fun2}>color</button>
-//         </div>
-//     )
+//     } 
+//   return (
+//     <div style={{backgroundColor:color?"red":"green",height:"400px"}}>
+//       <h2> {count}</h2>
+//     <button onClick={fun1} > Incr</button>
+//     <button onClick={()=>SetCount(count-1)} > decr</button>
+//     <button onClick={()=>SetCount(0)} > reset</button>
+//     <button onClick={fun2} > change</button>
+//     </div>
+//   )
 // }
 
 // export default Day2
 
 
+
 import React, { useState } from 'react'
 
 const Day2 = () => {
-    let [input, setInput]  =  useState(" ")
-    function fun1 (e){
-        setInput(e.target.value)
+    const [input,SetInput]=     useState("")
+    function fun1(e){
+        SetInput(e.target.value)   
     }
-
   return (
     <div>
         <h2>{input}</h2>
-        <input onChange={fun1} type="text" placeholder='enter name' />
+        <input    onChange={fun1} type='text'  placeholder='Enter your name'/>
     </div>
   )
 }
+
 
 export default Day2
