@@ -29,15 +29,38 @@
 // export default App
 
 
+// import React from 'react'
+// import Day2 from './day2'
+// import Day3 from './Day3'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Day2/> */}
+//       <Day3/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
 import React from 'react'
-import Day2 from './day2'
-import Day3 from './Day3'
+import Day4 from './Day4'
+import Day5 from './Day5'
+// import Day2 from './Day2'
+// import Day3 from './Day3'
 
 const App = () => {
+  let user="hello"
   return (
     <div>
       {/* <Day2/> */}
-      <Day3/>
+      {/* <Day3/> */}
+      {/* <Day4    data={user} /> */}
+      <Day5/>
+
+
     </div>
   )
 }
