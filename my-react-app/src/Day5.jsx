@@ -27,6 +27,16 @@ const Day5 = () => {
     }
    
 
+    function saveData(data){
+        localStorage.setItem('key',JSON.stringify(data))
+    }
+
+    // function deleteFromLS(id){
+    //       let save =JSON.parse(localStorage.getItem('key',))
+    // }
+      
+    
+
 
     return (
         <div>
@@ -35,10 +45,12 @@ const Day5 = () => {
 
                 {
                     input.map((a) => {
-                        return (<div id='card' onClick={()=>d(a.id)}>
+                        // return (<div id='card' onClick={()=>d(a.id)}>
+                         return (<div id='card'>
                             <h2>{a.id}</h2>
-                            <h1>{a.title}</h1>
-                            <button>add</button>
+                            {/* <h1>{a.title}</h1> */}
+                            <button onClick={()=>{saveData(a)}}>add</button>
+                            <button onClick={()=>{deleteFromLS(a.id)}}>delete</button>
 
                         </div>)
                     })
