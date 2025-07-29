@@ -67,22 +67,41 @@
 
 // export default App
 
-import React from 'react' 
-import Navbar from './Navbar'
-import Home from './Home'
-import Contact from './Contact'
+// import React from 'react' 
+// import Navbar from './Navbar'
+// import Home from './Home'
+// import Contact from './Contact'
+// import { Route,Routes } from 'react-router-dom'
+
+// const App = () => {
+//   return (
+//     <>
+    
+//     <Navbar/>
+//     <Routes>
+//       <Route path='/' element={<Home/>} />
+//       <Route path='/contact' element={<Contact/>} />
+//     </Routes>
+//     </>
+//   )
+// }
+
+// export default App
+
+
+import React from 'react'
+import SignUp from './SignUp'
+import Login from './Login'
 import { Route,Routes } from 'react-router-dom'
 
 const App = () => {
   return (
-    <>
-    
-    <Navbar/>
-    <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/contact' element={<Contact/>} />
-    </Routes>
-    </>
+    <div>
+      <Routes>
+        <Route path='/' element={<SignUp/>}   />
+        <Route path='/login' element={<Login/>} />
+      </Routes>
+    </div>
   )
 }
 
