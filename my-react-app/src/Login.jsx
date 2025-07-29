@@ -10,7 +10,7 @@ const Login = () => {
                     <input type="text" placeholder='enter email' autoComplete="off"  />
                     <br />
                     <br />
-                    <input type="password" placeholder='enter password' autoComplete="off" />
+                    <input type="password" placeholder='enter password' autoComplete="new-password" />
                     <br />
                     <br />
                     <button type="submit">Login</button>
