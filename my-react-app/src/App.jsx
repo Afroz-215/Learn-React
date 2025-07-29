@@ -92,18 +92,33 @@
 // export default App
 
 
+// import React from 'react'
+// // import SignUp from './SignUp'
+// // import Login from './Login'
+// // import { Route,Routes } from 'react-router-dom'
+
+// const App = () => {
+//   return (
+//     <div>
+//        <Day7/>
+//       {/* <Routes>
+//         <Route path='/' element={<SignUp/>}   />
+//         <Route path='/login' element={<Login/>} />
+//       </Routes> */}
+     
+//     </div>
+//   )
+// }
+
+// export default App
+
 import React from 'react'
-import SignUp from './SignUp'
-import Login from './Login'
-import { Route,Routes } from 'react-router-dom'
+import Day7 from './Day7'
 
 const App = () => {
   return (
     <div>
-      <Routes>
-        <Route path='/' element={<SignUp/>}   />
-        <Route path='/login' element={<Login/>} />
-      </Routes>
+      <Day7/>
     </div>
   )
 }
