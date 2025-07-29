@@ -7,10 +7,10 @@ const Login = () => {
          <fieldset>
             <h1>Login Form</h1>
                 <form action="">
-                    <input type="text" placeholder='enter email' />
+                    <input type="text" placeholder='enter email' autoComplete="off"  />
                     <br />
                     <br />
-                    <input type="password" placeholder='enter password' />
+                    <input type="password" placeholder='enter password' autoComplete="off" />
                     <br />
                     <br />
                     <button type="submit">Login</button>
