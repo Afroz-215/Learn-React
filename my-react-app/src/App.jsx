@@ -114,11 +114,14 @@
 
 import React from 'react'
 import Day7 from './Day7'
+import Day8 from './Day8'
 
 const App = () => {
   return (
     <div>
-      <Day7/>
+      {/* <Day7/> */}
+      <Day8/>
+
     </div>
   )
 }
