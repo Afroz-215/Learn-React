@@ -112,18 +112,48 @@
 
 // export default App
 
-import React from 'react'
-import Day7 from './Day7'
-import Day8 from './Day8'
-import Day9 from './Day9'
+// import React from 'react'
+// import Day7 from './Day7'
+// import Day8 from './Day8'
+// import Day9 from './Day9'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Day7/> */}
+//       {/* <Day8/> */}
+//       <Day9/>
+
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+import React, { useState } from 'react'
+import { Route,Routes } from 'react-router-dom'
+import Navbar from './Navbar'
+import Contact from './Contact'
+import Cart from './Cart'
+import Day5 from './Day5'
 
 const App = () => {
+  let [input,SetInput] =useState([])
   return (
     <div>
-      {/* <Day7/> */}
+        {/* <Day7/> */}
       {/* <Day8/> */}
-      <Day9/>
-
+      {/* <Day9/> */}
+      {/* <Day10/> */}
+      <Cart   />
+      <Day5 input={input}   SetInput={SetInput}/>
+      {/* <NavBar/>
+      <Routes>
+        <Route  path="/" element={<Home/>}/>
+        <Route path='/contact'  element={<Contact/>}/>
+      </Routes> */}
     </div>
   )
 }

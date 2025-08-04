@@ -7,7 +7,7 @@ import Context from './Context.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Context.Provider value="Ritik">
+      <Context.Provider value="heheheh">
 
         <A />
       </Context.Provider>
