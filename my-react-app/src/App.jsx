@@ -132,30 +132,43 @@
 
 
 
-import React, { useState } from 'react'
-import { Route,Routes } from 'react-router-dom'
-import Navbar from './Navbar'
+import React,{useState} from 'react'
+import NavBar from './NavBar'
+import { Route, Routes } from 'react-router-dom'
 import Contact from './Contact'
-import Cart from './Cart'
+// import Home from './Home'
+// import Day7 from './Day7'
+import Day8 from './Day8'
+import Day9 from './Day9'
 import Day5 from './Day5'
-
+import Cart from './Cart'
 const App = () => {
-  let [input,SetInput] =useState([])
+  let [input ,SetInput]=useState([]);
+  let [cartData,SetCartData]=useState([])
+
+  console.log(cartData,"dyan se dekhooo");
+  
+
   return (
     <div>
-        {/* <Day7/> */}
+      {/* <Day7/> */}
       {/* <Day8/> */}
       {/* <Day9/> */}
       {/* <Day10/> */}
-      <Cart   />
-      <Day5 input={input}   SetInput={SetInput}/>
-      {/* <NavBar/>
       <Routes>
-        <Route  path="/" element={<Home/>}/>
-        <Route path='/contact'  element={<Contact/>}/>
-      </Routes> */}
+        <Route  path='/cart' element={  <Cart   cartData={cartData}  />} />
+        <Route  path='/'  element={      <Day5 input={input}   cartData={cartData}  SetCartData ={SetCartData}   SetInput={SetInput}/>}/>
+      </Routes>
+    
+
+      {/* <NavBar/>
+      // <Routes>
+      //   <Route  path="/" element={<Home/>}/>
+      //   <Route path='/contact'  element={<Contact/>}/>
+      // </Routes> */}
     </div>
   )
 }
 
 export default App
+

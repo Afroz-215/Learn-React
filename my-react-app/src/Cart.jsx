@@ -1,8 +1,19 @@
 import React from 'react'
 
-const Cart = () => {
+const Cart = ({cartData}) => {
   return (
-    <div>Cart</div>
+    <div>
+          <div id='parent_Card'>  
+        {
+            cartData.map((a,index)=>{
+                return(<div id='card'  >
+                    <img  src={a.image}/>
+                    <p>{a.name}</p>
+                </div>)
+            })
+        }
+    </div>
+    </div>
   )
 }
 
