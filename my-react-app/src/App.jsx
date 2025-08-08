@@ -132,43 +132,58 @@
 
 
 
-import React,{useState} from 'react'
-import NavBar from './NavBar'
-import { Route, Routes } from 'react-router-dom'
-import Contact from './Contact'
-// import Home from './Home'
-// import Day7 from './Day7'
-import Day8 from './Day8'
-import Day9 from './Day9'
-import Day5 from './Day5'
-import Cart from './Cart'
-const App = () => {
-  let [input ,SetInput]=useState([]);
-  let [cartData,SetCartData]=useState([])
+// import React,{useState} from 'react'
+// import NavBar from './NavBar'
+// import { Route, Routes } from 'react-router-dom'
+// import Contact from './Contact'
+// // import Home from './Home'
+// // import Day7 from './Day7'
+// import Day8 from './Day8'
+// import Day9 from './Day9'
+// import Day5 from './Day5'
+// import Cart from './Cart'
+// const App = () => {
+//   let [input ,SetInput]=useState([]);
+//   let [cartData,SetCartData]=useState([])
 
-  console.log(cartData,"dyan se dekhooo");
+//   console.log(cartData,"dyan se dekhooo");
   
 
-  return (
-    <div>
-      {/* <Day7/> */}
-      {/* <Day8/> */}
-      {/* <Day9/> */}
-      {/* <Day10/> */}
-      <Routes>
-        <Route  path='/cart' element={  <Cart   cartData={cartData}  />} />
-        <Route  path='/'  element={      <Day5 input={input}   cartData={cartData}  SetCartData ={SetCartData}   SetInput={SetInput}/>}/>
-      </Routes>
+//   return (
+//     <div>
+//       {/* <Day7/> */}
+//       {/* <Day8/> */}
+//       {/* <Day9/> */}
+//       {/* <Day10/> */}
+//       <Routes>
+//         <Route  path='/cart' element={  <Cart   cartData={cartData}  />} />
+//         <Route  path='/'  element={      <Day5 input={input}   cartData={cartData}  SetCartData ={SetCartData}   SetInput={SetInput}/>}/>
+//       </Routes>
     
 
-      {/* <NavBar/>
-      // <Routes>
-      //   <Route  path="/" element={<Home/>}/>
-      //   <Route path='/contact'  element={<Contact/>}/>
-      // </Routes> */}
-    </div>
+//       {/* <NavBar/>
+//       // <Routes>
+//       //   <Route  path="/" element={<Home/>}/>
+//       //   <Route path='/contact'  element={<Contact/>}/>
+//       // </Routes> */}
+//     </div>
+//   )
+// }
+
+// export default App
+
+import React from 'react'
+import ApiShowData2 from './ApiShowData2'
+import ContextP from './ContextP'
+
+const App = () => {
+  return (
+     <ContextP>
+      <div>
+        <ApiShowData2 />
+      </div>
+    </ContextP>
   )
 }
 
 export default App
-
