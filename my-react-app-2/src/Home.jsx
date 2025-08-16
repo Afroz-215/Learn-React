@@ -3,9 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
     let navigate = useNavigate()
-    let users = [{ id: 1, name: "rimi" },
-    { id: 2, name: "ritik" },
-    { id: 3, name: "priyal" }]
+    let users = [
+        { id: 1, name: "rimi" },
+        { id: 2, name: "ritik" },
+        { id: 3, name: "priyal" }
+    ]
 
     function donee(id) {
         // console.log(id);
