@@ -18,20 +18,33 @@
 // export default App
 
 
+// import React from 'react'
+// import Home from './Home'
+// import { Route, Routes } from 'react-router-dom'
+// import UserDetails from './UserDetails'
+// const App = () => {
+//   return (
+//     <div>
+//       <Routes >  
+     
+//       <Route  path='/'   element={ <Home/>}/>
+//       <Route  path='/user/:id'   element={ <UserDetails/>}/>
+
+//       </Routes>
+      
+//     </div>
+//   )
+// }
+
+// export default App
+
 import React from 'react'
-import Home from './Home'
-import { Route, Routes } from 'react-router-dom'
-import UserDetails from './UserDetails'
+import Memo from './Memo'
+
 const App = () => {
   return (
     <div>
-      <Routes >  
-     
-      <Route  path='/'   element={ <Home/>}/>
-      <Route  path='/user/:id'   element={ <UserDetails/>}/>
-
-      </Routes>
-      
+      <Memo/>
     </div>
   )
 }
