@@ -1,33 +1,33 @@
 
 import { createContext, useReducer, useEffect } from 'react'
- export const Context= createContext()
+export const Context = createContext()
 
- const initialData={
-    data:[],
-    cartData:[]
- }
+const initialData = {
+    data: [],
+    cartData: []
+}
 
- function reduser(state,action){
-    if(action.type=="FETCH_DATA"){
-        return{
-            ...state,data:action.payload
+function reduser(state, action) {
+    if (action.type == "FETCH_DATA") {
+        return {
+            ...state, data: action.payload
         }
     }
-    else if(action.type==="addToCart"){
-         
-        let existingItem=    state.cartData.find(item=>item.id==action.payload)
+    else if (action.type === "addToCart") {
 
-        if(existingItem){
-            return{
+        let existingItem = state.cartData.find(item => item.id == action.payload)
+
+        if (existingItem) {
+            return {
                 ...state,
-                cartData:state.cartData.map(item=>item.id===action.payload.id?{...item,quantity:item.quantity+1}:item)
+                cartData: state.cartData.map(item => item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item)
             }
 
         }
-        else{
-            return{
+        else {
+            return {
                 ...state,
-                cartData:[...state.cartData,{...action.payload,quantity:1}]
+                cartData: [...state.cartData, { ...action.payload, quantity: 1 }]
             }
         }
         // {
@@ -46,18 +46,18 @@ import { createContext, useReducer, useEffect } from 'react'
         // }
     }
 
-    else if(action.type==="increment"){
-        return{
+    else if (action.type === "increment") {
+        return {
             ...state,
-            cartData:state.cartData.map(item=>item.id===action.payload?{...item,quantity:item.quantity+1}:item)
+            cartData: state.cartData.map(item => item.id === action.payload ? { ...item, quantity: item.quantity + 1 } : item)
         }
 
     }
 
-    else if(action.type==="decrement"){
-        return{
+    else if (action.type === "decrement") {
+        return {
             ...state,
-            cartData:state.cartData.map(item=>item.id===action.payload?{...item,quantity:item.quantity-1}:item).filter(a=>a.quantity>0)
+            cartData: state.cartData.map(item => item.id === action.payload ? { ...item, quantity: item.quantity - 1 } : item).filter(a => a.quantity > 0)
         }
     }
 
@@ -65,43 +65,57 @@ import { createContext, useReducer, useEffect } from 'react'
 
 
 
-    else if(action.type=="delet"){
-        return{
+    else if (action.type == "delet") {
+        return {
             ...state,
-            cartData:state.cartData.filter((data,key)=>{
-                return key!==action.payload
+            cartData: state.cartData.filter((data, key) => {
+                return key !== action.payload
 
             })
         }
     }
-    else{
+
+    else if (action.type == 'max') {
+        return {
+            ...state,
+            data: [...state.data.sort((a, b) => b.rating - a.rating)]
+        }
+    }
+
+    else if (action.type == 'min') {
+        return {
+            ...state,
+            data: [...state.data.sort((a, b) => a.rating - b.rating)]
+        }
+    }
+    else {
         return state
     }
 
- }
+}
 
- const ContextP=({children})=>{
-      const [state,dispatch] =  useReducer(reduser,initialData)
+const ContextP = ({ children }) => {
+    const [state, dispatch] = useReducer(reduser, initialData)
 
-      useEffect(()=>{
+    useEffect(() => {
         // console.log("hello");
         fetch('https://dummyjson.com/recipes').
-        then((res)=>{
-            return res.json()
+            then((res) => {
+                return res.json()
 
-        }).then((data)=>{ 
-            dispatch({type:"FETCH_DATA" ,payload:data.recipes})   
-        })
-        
-    },[])
+            }).then((data) => {
+                dispatch({ type: "FETCH_DATA", payload: data.recipes })
+            })
 
-    return(
-        <Context.Provider value={{state,dispatch}}>
-        {children}
+    }, [])
+
+    return (
+        <Context.Provider value={{ state, dispatch }}>
+            {children}
         </Context.Provider>
     )
 
- }
+}
 
 
- export default ContextP
+export default ContextP
