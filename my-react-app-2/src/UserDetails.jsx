@@ -16,10 +16,10 @@ const UserDetails = () => {
   return (
     <div>
       <h1> UserDetails  </h1>
-      <li>
+      
         <h5>User Id: {userData.id}</h5>
         <h5>userName: {userData.name}</h5>
-      </li>
+      
 
     </div>
   )

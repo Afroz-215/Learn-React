@@ -21,26 +21,41 @@
 // export default Memo
 
 
-import React, { memo,useState } from 'react'
+import React, { Children, memo, useCallback, useMemo, useState } from 'react'
 
 const Memo = () => {
-    let [count,setCount]= useState(0);
+    let [count, setCount] = useState(0);
+    let [state, setState] = useState(0);
+
     console.log("app file");
-  return (
-    <div>
-        <h1 onClick={()=>setCount(count+1)}>count: {count}</h1>
-        <MemoizedFile/>
-    </div>
-  )
+
+
+    // let even = useMemo(() => {
+    //     return () => {
+    //         console.log("hello")
+    //     }   
+    // }, [])
+
+    let even =useCallback(()=>{
+        console.log("first")
+    })
+    return (
+        <div>
+            <h1>count: {count}</h1>
+            <button onClick={() => setCount(count + 1)}>++</button>
+            <button onClick={() => setCount(state - 1)}>--</button>
+            <MemoizedFile even={even}/>
+        </div>
+    )
 }
 
 export default Memo
 
 
 
-let MemoizedFile =memo(function ChildApp(){
+let MemoizedFile = memo(function ChildApp() {
     console.log("child file")
-    return(
+    return (
         <div>
             <h2>childdd</h2>
         </div>
