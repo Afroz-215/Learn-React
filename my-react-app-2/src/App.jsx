@@ -40,11 +40,13 @@
 
 import React from 'react'
 import Memo from './Memo'
+import Ref from './Ref'
 
 const App = () => {
   return (
     <div>
-      <Memo/>
+      {/* <Memo/> */}
+      <Ref/>
     </div>
   )
 }
