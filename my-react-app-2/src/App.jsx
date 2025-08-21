@@ -38,15 +38,38 @@
 
 // export default App
 
-import React from 'react'
-import Memo from './Memo'
-import Ref from './Ref'
+// import React from 'react'
+// import Memo from './Memo'
+// import Ref from './Ref'
+
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Memo/> */}
+//       <Ref/>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+import React, { lazy, Suspense, useState } from 'react'
+// import LazyLoading from './LazyLoading'
+ const LazyC =lazy(()=>import('./LazyLoading'))
 
 const App = () => {
+  let [show,SetShow] =useState(false)
+  
   return (
     <div>
-      {/* <Memo/> */}
-      <Ref/>
+      {/* {show?<LazyLoading/>:null} */}
+      {
+         show &&(<Suspense fallback='Loading...'><LazyC/></Suspense>)
+      }
+     
+      <button onClick={()=>SetShow(true)}>click</button>
+
     </div>
   )
 }
