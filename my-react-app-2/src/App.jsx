@@ -62,9 +62,9 @@ const App = () => {
   let [show,SetShow] =useState(false)
   
   return (
-    <div>
+    <div className='bg-red-900 text-white p-6 rounded-xl'>
       {/* {show?<LazyLoading/>:null} */}
-      {
+      { 
          show &&(<Suspense fallback='Loading...'><LazyC/></Suspense>)
       }
      
